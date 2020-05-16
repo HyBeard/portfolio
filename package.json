@@ -13,5 +13,25 @@
     "test": "jest & exit 0"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.1.0",
+    "cssnano": "^4.1.10",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-normalize": "^9.0.0",
+    "postcss-pxtorem": "^5.1.1",
+    "postcss-sort-media-queries": "^1.4.24",
+    "prettier": "^2.0.5",
+  }
 }
