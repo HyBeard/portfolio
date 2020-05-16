@@ -1,0 +1,17 @@
+{
+  "name": "kapsevich_cv",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js --progress",
+    "build:stats": "webpack --config webpack.prod.js --progress --profile --json > stats.json",
+    "coverage:full": "jest --coverage",
+    "debugWebpack": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js --config webpack.prod.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --progress --open",
+    "lint": "npx eslint src",
+    "test": "jest & exit 0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
