@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+html,
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  color: $text;
+  background-color: $white;
+  scroll-behavior: smooth;
+}
+
+.wrap {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.main-section {
+  box-sizing: border-box;
+  padding: 1rem 0 4rem;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: $text;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    &::after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 1.5rem;
+      content: "";
+      background: linear-gradient(90deg, $dark 0%, $dark 5%, $paleText 5%, $paleText 100%);
+    }
+  }
+}

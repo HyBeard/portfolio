@@ -9,12 +9,12 @@ module.exports = ({ webpack }) => {
   const isProd = webpack.mode === 'production';
 
   return {
-    map: !isProd,
-
     plugins: [
-      postcssImport({ path: './src/styles/' }),
-      postcssPurgeCss({ content: ['./src/**/*.html'] }),
-      postcssNormalize(),
+      postcssImport(postcssNormalize().postcssImport({ path: ['./src/styles'] })),
+      postcssPurgeCss({
+        content: ['./src/**/*.html', './src/**/*.hbs'],
+        whitelistPatterns: [/visible/, /active/, /hidden/, /transparent/],
+      }),
       isProd ? autoprefixer() : false,
       isProd ? postcssSortMediaQueries() : false,
       postcssPxToRem({ propList: ['*', '!*border*'] }),
