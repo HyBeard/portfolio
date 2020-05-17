@@ -1,6 +1,10 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const miniSvgDataUri = require('mini-svg-data-uri');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const skillsData = require('./src/data/skills.json');
+const portfolioData = require('./src/data/portfolio.json');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -10,7 +14,7 @@ const PATHS = {
 
 module.exports = {
   externals: {
-    paths: PATHS,
+    PATHS,
   },
   entry: {
     main: PATHS.src,
@@ -19,26 +23,46 @@ module.exports = {
     path: PATHS.dist,
   },
   target: 'web',
-  optimization: {
-    moduleIds: 'hashed',
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
-  },
   module: {
     rules: [
       {
         test: /\.html$/,
+        use: [{ loader: 'html-loader' }],
+      },
+      {
+        test: /\.((c|sa|sc)ss)$/i,
         use: [
           {
-            loader: 'html-loader',
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(hbs|handlebars)$/,
+        use: [
+          {
+            loader: 'handlebars-loader',
+            query: {
+              partialDirs: `${PATHS.src}/views/partials`,
+              helperDirs: `${PATHS.src}/views/helpers`,
+              inlineRequires: /\/assets\/images\//gi,
+            },
           },
         ],
       },
@@ -54,8 +78,8 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 16 * 1024,
-              outputPath: 'assets',
-              name: '[folder]/[name].[ext]',
+              name: '[folder]/[name].[hash:4].[ext]',
+              esModule: false, // very important for HBS
             },
           },
           {
@@ -71,20 +95,19 @@ module.exports = {
             options: {
               limit: 4 * 1024,
               generator: (content) => miniSvgDataUri(content.toString()),
-              outputPath: 'assets',
-              name: '[folder]/[name].[ext]',
+              name: '[folder]/[name].[hash:4].[ext]',
             },
           },
           { loader: 'svgo-loader' },
         ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'assets',
+              outputPath: 'fonts',
               name: '[folder]/[name].[ext]',
             },
           },
@@ -92,5 +115,16 @@ module.exports = {
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Kapsevich Ilya | Front End',
+      template: 'src/views/index.hbs',
+      inject: 'body',
+      templateParameters: {
+        skillsData,
+        portfolioData,
+      },
+    }),
+  ],
 };

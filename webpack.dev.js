@@ -1,19 +1,21 @@
-const path = require('path');
 const merge = require('webpack-merge');
-
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { EnvironmentPlugin } = require('webpack');
 
 const webpackCommon = require('./webpack.common.js');
 
-module.exports = merge(webpackCommon, {
+const { PATHS } = webpackCommon.externals;
+const strategy = {
+  'module.rules.use': 'prepend',
+};
+
+module.exports = merge.smartStrategy(strategy)(webpackCommon, {
   mode: 'development',
   output: {
     filename: '[name].js',
   },
   devtool: 'eval-cheap-module-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: PATHS.dist,
     port: 8081,
     hot: true,
     overlay: {
@@ -22,37 +24,11 @@ module.exports = merge(webpackCommon, {
     },
   },
   module: {
-    rules: [
-      {
-        test: /\.((c|sa|sc)ss)$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
-      },
-    ],
+    rules: [{ test: /\.((c|sa|sc)ss)$/i, use: [{ loader: 'style-loader' }] }],
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      title: 'Kapsevich Ilya | Front End',
-      template: path.resolve(__dirname, 'src/views/index.html'),
-      inject: 'body',
-      filename: 'index.html',
-      minify: false,
-      // favicon: './src/assets/favicon/fav16.png',
+    new EnvironmentPlugin({
+      NODE_ENV: 'development',
     }),
-    new MiniCssExtractPlugin({ filename: '[name].css' }),
   ],
 });
