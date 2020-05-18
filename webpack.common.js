@@ -4,7 +4,6 @@ const miniSvgDataUri = require('mini-svg-data-uri');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const skillsData = require('./src/data/skills.json');
-const portfolioData = require('./src/data/portfolio.json');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -123,7 +122,6 @@ module.exports = {
       inject: 'body',
       templateParameters: {
         skillsData,
-        portfolioData,
       },
     }),
   ],
