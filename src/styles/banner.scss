@@ -1,0 +1,39 @@
+@use 'variables' as *;
+
+.banner-section {
+  top: 0;
+  height: calc(100vh - 125px);
+  background-image: url("../assets/images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    margin-left: 10%;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 500;
+    color: $text;
+    letter-spacing: 0.1em;
+  }
+
+  &__details {
+    margin: 1rem 0 2rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    color: $text;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  // &__download-btn {
+  // }
+}
