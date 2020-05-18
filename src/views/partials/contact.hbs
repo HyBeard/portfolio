@@ -1,6 +1,23 @@
 <section id="contact" class="contact-section main-section">
   <div class="wrap">
     <h2 class="main-section__title">Contact Me</h2>
-    <div class="contact-section__container"></div>
+    <div class="contact-section__container">
+
+      <form name="contact"
+        action="{{!-- https://formspree.io/xrgypeee" class="contact-section__contact-form contact-form --}}"
+        method="POST">
+        <h3 class="contact-form__head">Send Me A Note</h3>
+        <input required="" placeholder="Name" class="contact-form__input" type="text" name="name" id="name"
+          autocomplete="off">
+        <input required="" placeholder="Email Address" class="contact-form__input" type="email" name="_replyto"
+          id="email" autocomplete="off">
+        <input placeholder="Subject" class="contact-form__input" type="text" name="_subject" id="subject"
+          autocomplete="off">
+        <textarea required="" placeholder="Your Message" name="message" class="contact-form__textarea"
+          id="message"></textarea>
+        <button class="contact-form__submit-btn btn" type="submit">Send Mail</button>
+      </form>
+
+    </div>
   </div>
 </section>
