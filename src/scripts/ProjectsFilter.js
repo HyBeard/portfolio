@@ -8,7 +8,7 @@ export default class ProjectsFilter {
   activeFilterClass = 'filter__button_active';
   projectsSectionClass = 'portfolio__project-list';
   projectContainerClass = 'portfolio__project-container';
-  visibleProjectContainerClass = 'portfolio__project-container_visible';
+  projectContainerClass = 'portfolio__project-container';
   projectImageClass = 'project__screen';
 
   currentFilter = 'Show All';
@@ -18,7 +18,7 @@ export default class ProjectsFilter {
     this.projects = [...document.getElementsByClassName(this.projectContainerClass)];
     [this.projectsSection] = document.getElementsByClassName(this.projectsSectionClass);
     this.iso = new Isotope(`.${this.projectsSectionClass}`, {
-      itemSelector: `.${this.visibleProjectContainerClass}`,
+      itemSelector: `.${this.projectContainerClass}`,
       percentPosition: true,
     });
   }
@@ -42,8 +42,8 @@ export default class ProjectsFilter {
   };
 
   init = () => {
-    const images = [...document.getElementsByClassName(this.projectImageClass)];
     const [filterSection] = document.getElementsByClassName(this.filtersSectionClass);
+    const images = [...document.getElementsByClassName(this.projectImageClass)];
 
     this.currentFilterElement.classList.add(this.activeFilterClass);
     listenImagesLoading(images, this.filterVisibleProjects);
