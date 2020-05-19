@@ -1,3 +1,7 @@
+import Isotope from 'isotope-layout';
+
+import listenImagesLoading from './utils/listenImagesLoading';
+
 export default class ProjectsFilter {
   filtersSectionClass = 'portfolio-section__filter';
   filterClass = 'filter__button';
@@ -5,14 +9,18 @@ export default class ProjectsFilter {
   projectsSectionClass = 'portfolio__project-list';
   projectContainerClass = 'portfolio__project-container';
   visibleProjectContainerClass = 'portfolio__project-container_visible';
+  projectImageClass = 'project__screen';
 
   currentFilter = 'Show All';
 
-  constructor(isoInstance) {
-    this.iso = isoInstance;
+  constructor() {
     this.currentFilterElement = document.querySelector(`[data-filter='${this.currentFilter}']`);
     this.projects = [...document.getElementsByClassName(this.projectContainerClass)];
     [this.projectsSection] = document.getElementsByClassName(this.projectsSectionClass);
+    this.iso = new Isotope(`.${this.projectsSectionClass}`, {
+      itemSelector: `.${this.visibleProjectContainerClass}`,
+      percentPosition: true,
+    });
   }
 
   changeFilter = (filterElem, filterName) => {
@@ -24,25 +32,21 @@ export default class ProjectsFilter {
   };
 
   filterVisibleProjects = () => {
-    this.projects.forEach((pr) => {
-      const projectFilters = pr.dataset.filters.split(',');
+    this.iso.arrange({
+      filter: (itemElem) => {
+        const projectFilters = itemElem.dataset.filters.split(',');
 
-      if (projectFilters.includes(this.currentFilter) || this.currentFilter === 'Show All') {
-        pr.classList.add(this.visibleProjectContainerClass);
-
-        return;
-      }
-
-      pr.classList.remove(this.visibleProjectContainerClass);
+        return projectFilters.includes(this.currentFilter) || this.currentFilter === 'Show All';
+      },
     });
-
-    this.iso.arrange({ filter: `.${this.visibleProjectContainerClass}` });
   };
 
   init = () => {
+    const images = [...document.getElementsByClassName(this.projectImageClass)];
     const [filterSection] = document.getElementsByClassName(this.filtersSectionClass);
 
     this.currentFilterElement.classList.add(this.activeFilterClass);
+    listenImagesLoading(images, this.filterVisibleProjects);
 
     filterSection.addEventListener('click', ({ target }) => {
       const filterElem = target.closest(`.${this.filterClass}`);
