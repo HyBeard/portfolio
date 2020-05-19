@@ -15,13 +15,16 @@
     "coverage:full": "jest --coverage"
   },
   "dependencies": {
-    "@csstools/normalize.css": "^10.1.0"
+    "@csstools/normalize.css": "^10.1.0",
+    "isotope-layout": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "autoprefixer": "^9.7.6",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
