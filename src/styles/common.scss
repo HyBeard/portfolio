@@ -20,6 +20,10 @@ body {
   box-sizing: border-box;
   padding: 1rem 0 4rem;
 
+  &:target {
+    scroll-margin-top: 80px; // fixed-header-height
+  }
+
   &__title {
     margin-bottom: 2rem;
     font-weight: 500;

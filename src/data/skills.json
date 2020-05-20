@@ -23,7 +23,7 @@
     ]
   },
   {
-    "category": "Other",
+    "category": "Tools",
     "skills": [
       { "title": "Git", "percent": 80 },
       { "title": "Webpack", "percent": 75 },

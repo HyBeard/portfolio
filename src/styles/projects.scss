@@ -41,7 +41,7 @@
     margin: 0;
     margin-right: -2rem;
     padding: 1rem 0;
-    transition: height 0.4s ease-in-out;
+    transition: height 0.5s ease;
   }
 
   &__project-container {
@@ -50,14 +50,10 @@
     margin-right: 2rem;
     margin-bottom: 2rem;
     list-style: none;
-    transition: opacity 0.5s ease-out;
 
     @media screen and (max-width: $breakpoint-l) {
       width: calc(50% - 2rem);
     }
-
-    // &_visible {
-    // }
   }
 }
 
@@ -103,7 +99,7 @@
   &__screen {
     box-sizing: border-box;
     width: 100%;
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease;
   }
 
   &__details {
@@ -149,7 +145,7 @@
     width: 100%;
     padding: 0.25rem 0.5rem;
     opacity: 0;
-    transition: opacity ease 0.5s, bottom ease 0.5s;
+    transition: opacity 0.5s ease, bottom 0.5s ease;
   }
 
   &__tag-list {
