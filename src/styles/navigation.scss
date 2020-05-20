@@ -1,18 +1,11 @@
 @use 'variables' as *;
 
-.navigation-section {
-  $red: 15;
-
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background-color: $white;
-
+.navigation-row {
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: $nav-height;
   }
 
   &__logo-box {
@@ -20,8 +13,17 @@
     height: 2rem;
   }
 
-  // &__navbar {
-  // }
+  &__navbar {
+  }
+
+  &__burger-menu {
+    display: none;
+    font-size: 1.5rem;
+
+    &_active {
+      color: $primary;
+    }
+  }
 }
 
 .navbar {
@@ -60,14 +62,8 @@
     text-decoration: none;
     transition: color 0.2s ease;
   }
-}
 
-.nav-shadow {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  height: 80px;
-  pointer-events: none;
-  box-shadow: 0 0 8px 0 $dark;
+  &_visible {
+    display: block;
+  }
 }
