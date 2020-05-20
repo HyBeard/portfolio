@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: space-between;
     height: $nav-height;
+
+    @media screen and (max-width: $breakpoint-m) {
+      height: $nav-height-m;
+    }
   }
 
   &__logo-box {
@@ -20,6 +24,10 @@
     display: none;
     font-size: 1.5rem;
 
+    @media screen and (max-width: $breakpoint-xs) {
+      display: inline-block;
+    }
+
     &_active {
       color: $primary;
     }
@@ -29,6 +37,10 @@
 .navbar {
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
+  @media screen and (max-width: $breakpoint-xs) {
+    display: none;
+  }
 
   &__list {
     display: flex;

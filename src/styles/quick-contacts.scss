@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: space-between;
     height: $quick-contacts-height;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      justify-content: flex-end;
+    }
   }
 
   // &__communications {
@@ -39,8 +43,19 @@
     text-decoration: none;
   }
 
+  &__text {
+    @media screen and (max-width: $breakpoint-xs) {
+      display: none;
+    }
+  }
+
   &__icon {
     margin-right: 0.5rem;
     color: $primary;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      margin: 0;
+      color: inherit;
+    }
   }
 }

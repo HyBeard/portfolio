@@ -7,6 +7,10 @@ body {
   color: $text;
   background-color: $white;
   scroll-behavior: smooth;
+
+  @media screen and (max-width: $breakpoint-m) {
+    font-size: 14px;
+  }
 }
 
 // nav-shadow
@@ -20,6 +24,10 @@ body::before {
   pointer-events: none;
   content: "";
   box-shadow: 0 0 8px 0 $dark;
+
+  @media screen and (max-width: $breakpoint-m) {
+    height: $nav-height-m;
+  }
 }
 
 header {
@@ -34,14 +42,26 @@ header {
   height: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media screen and (max-width: $breakpoint-m) {
+    padding: 0 1rem;
+  }
 }
 
 .main-section {
   box-sizing: border-box;
   padding: 2rem 0 4rem;
 
+  @media screen and (max-width: $breakpoint-m) {
+    padding: 1.5rem 0;
+  }
+
   &:target {
     scroll-margin-top: $nav-height;
+
+    @media screen and (max-width: $breakpoint-m) {
+      scroll-margin-top: $nav-height-m;
+    }
   }
 
   &__title {
@@ -52,6 +72,10 @@ header {
     text-transform: uppercase;
     letter-spacing: 0.1em;
 
+    @media screen and (max-width: $breakpoint-m) {
+      margin-bottom: 1.5rem;
+    }
+
     &::after {
       display: block;
       width: 100%;
@@ -59,6 +83,10 @@ header {
       margin-top: 1.5rem;
       content: "";
       background: linear-gradient(90deg, $dark 0%, $dark 5%, $paleText 5%, $paleText 100%);
+
+      @media screen and (max-width: $breakpoint-m) {
+        margin-top: 1rem;
+      }
     }
   }
 }
