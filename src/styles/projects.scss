@@ -1,23 +1,26 @@
 @use 'variables' as *;
 
-// .portfolio-section {
-// &__filter {
-// }
-
-// &__projects {
-// }
-// }
-
 .filter {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  $self: &;
+
+  &__icon {
+    display: none;
+    font-size: 1.2rem;
+  }
+
+  &__button-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
   &__button {
+    box-sizing: border-box;
     display: inline-block;
+    width: 100%;
     padding: 0.5rem 1rem;
     color: $text;
     cursor: pointer;
@@ -30,7 +33,8 @@
 }
 
 .portfolio {
-  padding: 0.5rem;
+  $gap-l: 1.5rem !default;
+  $gap-m: 1rem !default;
 
   &__project-list {
     position: relative;
@@ -39,21 +43,17 @@
     flex-wrap: wrap;
     align-content: flex-start;
     margin: 0;
-    margin-right: -2rem;
-    padding: 1rem 0;
+    margin-right: -$gap-l;
+    padding: 0;
     transition: height 0.5s ease;
   }
 
   &__project-container {
     box-sizing: border-box;
-    width: calc(33.33% - 2rem);
-    margin-right: 2rem;
-    margin-bottom: 2rem;
+    width: calc(33.33% - #{$gap-l});
+    margin-right: $gap-l;
+    margin-bottom: $gap-l;
     list-style: none;
-
-    @media screen and (max-width: $breakpoint-l) {
-      width: calc(50% - 2rem);
-    }
   }
 }
 
@@ -68,8 +68,9 @@
 
   &:hover,
   &:focus {
-    .project__details {
+    .project__info {
       top: 50%;
+      z-index: 0;
       opacity: 1;
     }
 
@@ -97,15 +98,16 @@
   }
 
   &__screen {
-    box-sizing: border-box;
     width: 100%;
     transition: opacity 0.5s ease;
   }
 
-  &__details {
+  &__info {
+    // z-index to fix 'drill-touch'
     position: absolute;
     top: 80%;
     left: 0;
+    z-index: -1;
     box-sizing: border-box;
     width: 100%;
     padding: 0 2rem;
@@ -113,7 +115,7 @@
     color: $white;
     text-align: center;
     opacity: 0;
-    transition: opacity 0.5s ease 0s, top 0.5s ease 0s;
+    transition: opacity 0.5s ease 0s, top 0.5s ease 0s, z-index 0s ease 0.1s;
     transform: translate(0, -50%);
   }
 
@@ -123,7 +125,8 @@
   }
 
   &__title {
-    margin: 0 0 1rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
     font-size: 1.5rem;
     font-weight: 500;
     color: $primary;
@@ -131,7 +134,7 @@
   }
 
   &__description {
-    margin-bottom: 0;
+    margin: 0;
   }
 
   &__additional {
@@ -179,5 +182,19 @@
       margin: 0 0.5rem;
       content: "/";
     }
+  }
+}
+
+.portfolio-section {
+  &__container {
+  }
+
+  &__filter {
+  }
+
+  &__projects {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 0.5rem;
   }
 }
