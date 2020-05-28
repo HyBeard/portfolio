@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/53dae47256.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header>
+
+    {{> partials/quick-contacts  }}
+
+    {{> partials/navigation  }}
+
+  </header>
+
+  <main>
+
+    {{> partials/banner  }}
+
+    {{> partials/skills categories=skillsData }}
+
+    {{> partials/about }}
+
+    {{> partials/projects projectsData=projectsData }}
+
+    {{> partials/contact }}
+
+  </main>
+
+  {{> partials/footer }}
+
+</body>
+
+</html>

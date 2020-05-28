@@ -1,0 +1,18 @@
+@use 'fonts';
+@use "common";
+@use "components";
+@use 'hamburger';
+@use "quick-contacts";
+@use "navigation";
+@use "banner";
+@use "about";
+@use "skills";
+@use "projects";
+@use "contact";
+@use "footer";
+
+/* purgecss start ignore */
+
+@import "normalize.css/opinionated.css";
+
+/* purgecss end ignore */

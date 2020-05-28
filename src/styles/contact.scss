@@ -1,0 +1,91 @@
+@use 'variables' as *;
+
+.contact-section {
+  padding-bottom: 3rem;
+  background-color: $surface;
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  &__form-wrap {
+    position: relative;
+  }
+
+  &__form-head {
+    margin-top: 0;
+    font-weight: 500;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__contact-form {
+    width: 100%;
+  }
+
+  &__medias {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: flex;
+    flex-grow: 0;
+    margin-left: 1rem;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      margin-left: 0.8rem;
+    }
+  }
+
+  &__medias-list {
+    flex-direction: column;
+    order: 1;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__input {
+    width: 100%;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    padding-left: 1.5rem;
+    font-family: $font-main;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $text;
+    background-color: $white;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      height: 2.8rem;
+      margin-bottom: 0.8rem;
+      padding-left: 0.8rem;
+    }
+  }
+
+  &__textarea {
+    @extend .contact-form__input;
+
+    min-height: 10rem;
+    padding-top: 1rem;
+    resize: none;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      padding-top: 0.8rem;
+    }
+  }
+
+  &__submit-btn {
+    margin-left: auto;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+.about-section {
+  background-color: $surface;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    margin-right: 2rem;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      order: 1;
+      margin-right: 0;
+    }
+  }
+
+  &__photo-box {
+    flex: 1 0 auto;
+    width: 350px;
+    max-width: 40%;
+    padding: 0 2rem;
+    overflow: hidden;
+    font-size: 0;
+    box-shadow: 1px 1px 7px -4px $text;
+
+    @media screen and (max-width: $breakpoint-m) {
+      max-width: 30%;
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+      order: 0;
+      width: 150px;
+      max-width: initial;
+      height: 150px;
+      padding: 0;
+      border-radius: 100%;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    filter: grayscale(0.3);
+  }
+
+  // &__subtitle {
+  // }
+
+  // &__text {
+  // }
+}

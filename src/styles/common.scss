@@ -1,0 +1,92 @@
+@use 'variables' as *;
+
+html,
+body {
+  font-family: $font-main;
+  font-weight: 400;
+  color: $text;
+  background-color: $white;
+  scroll-behavior: smooth;
+
+  @media screen and (max-width: $breakpoint-m) {
+    font-size: 14px;
+  }
+}
+
+// nav-shadow
+
+body::before {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: $nav-height;
+  pointer-events: none;
+  content: "";
+  box-shadow: 0 0 8px 0 $dark;
+
+  @media screen and (max-width: $breakpoint-m) {
+    height: $nav-height-m;
+  }
+}
+
+header {
+  position: sticky;
+  top: -$quick-contacts-height;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.wrap {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media screen and (max-width: $breakpoint-m) {
+    padding: 0 1rem;
+  }
+}
+
+.main-section {
+  box-sizing: border-box;
+  padding: 2rem 0 4rem;
+
+  @media screen and (max-width: $breakpoint-m) {
+    padding: 1.5rem 0;
+  }
+
+  &:target {
+    scroll-margin-top: $nav-height;
+
+    @media screen and (max-width: $breakpoint-m) {
+      scroll-margin-top: $nav-height-m;
+    }
+  }
+
+  &__title {
+    margin: 0 0 2rem;
+    font-weight: 500;
+    color: $text;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    @media screen and (max-width: $breakpoint-m) {
+      margin-bottom: 1.5rem;
+    }
+
+    &::after {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 1.5rem;
+      content: "";
+      background: linear-gradient(90deg, $dark 0%, $dark 5%, $paleText 5%, $paleText 100%);
+
+      @media screen and (max-width: $breakpoint-m) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

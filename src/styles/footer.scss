@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+.site-footer {
+  position: relative;
+  padding: 2rem 0 1rem;
+  text-align: center;
+  background-color: $dark;
+
+  &__inner {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: $white;
+    color: $paleText;
+  }
+
+  &__up-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    color: $white;
+    text-align: center;
+    background-color: $primary;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__socials {
+    display: inline-block;
+    margin: 1rem 0;
+  }
+
+  & hr {
+    width: 60%;
+    height: 1px;
+    margin-top: 0;
+    background-color: rgba($color: $paleText, $alpha: 0.4);
+    border: none;
+  }
+}

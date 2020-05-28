@@ -1,0 +1,55 @@
+<section id="projects" class="portfolio-section main-section">
+  <div class="wrap">
+    <h2 class="main-section__title">My Projects</h2>
+    <div class="portfolio-section__container">
+
+      <div class="filter portfolio-section__filter">
+        <ul class="filter__button-list">
+          {{#each projectsData.filterList}}
+          <li class="filter__button" data-filter="{{this}}">
+            <span>{{this}}</span>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="portfolio portfolio-section__projects">
+        <ul class="portfolio__project-list">
+
+          {{#each projectsData.projects}}
+          <li class="portfolio__project-container" data-filters="{{filters}}">
+            <div class="project">
+
+              {{#loadImageWithErrorHandling image}}
+              <img class="project__screen transparent" src="{{src}}" style="{{style}}" alt="">
+              {{/loadImageWithErrorHandling}}
+
+              <div class="project__info">
+                <a class="project__deploy-link" href="{{deployLink}}">
+                  <h3 class="project__title">{{name}}</h3>
+                  <p class="project__description">{{description}}</p>
+                </a>
+              </div>
+              <div class="project__additional">
+                <ul class="tag-list project__tag-list">
+
+                  {{#each filters}}
+                  <li class="tag-list__tag">{{this}}</li>
+                  {{/each}}
+
+                </ul>
+                <div class="project__links-box">
+                  <a href="{{sourceLink}}" class="project__link-icon"><i class="fab fa-github"></i></a>
+                  <a href="{{deployLink}}" class="project__link-icon"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {{/each}}
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

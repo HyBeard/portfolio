@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.banner-section {
+  top: 0;
+  height: calc(100vh - #{$quick-contacts-height + $nav-height});
+  background-image: url("../assets/images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+
+  @media screen and (max-width: $breakpoint-m) {
+    height: calc(100vh - #{$quick-contacts-height + $nav-height-m});
+    background-position: 65% center;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    margin-left: 10%;
+  }
+
+  // &__content {
+  // }
+
+  &__name {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 500;
+    color: $text;
+    letter-spacing: 0.1rem;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__position {
+    margin: 1rem 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    color: $text;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      font-size: 1rem;
+    }
+  }
+
+  // &__download-btn {
+  // }
+}

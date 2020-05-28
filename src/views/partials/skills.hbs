@@ -1,0 +1,26 @@
+<section id="skills" class="skills-section main-section">
+  <div class="wrap">
+    <h2 class="main-section__title">My Skills</h2>
+    <div class="skills-section__container">
+
+      {{#each categories}}
+      <div class="skills-category skills-section__category">
+        <h2 class="skills-category__title">{{category}}</h2>
+        <ul class="skills-category__list">
+
+          {{#each skills}}
+          <li class="skillbar skills-category__item">
+            <h4 class="skillbar__title">
+              {{title}}
+              <span class="skillbar__percent" style="width: {{percent}}%;"></span>
+            </h4>
+          </li>
+          {{/each}}
+
+        </ul>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+</section>

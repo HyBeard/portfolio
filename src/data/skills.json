@@ -1,0 +1,36 @@
+[
+  {
+    "category": "FrontEnd",
+    "skills": [
+      { "title": "JavaScript", "percent": 90 },
+      { "title": "React", "percent": 80 },
+      { "title": "Redux", "percent": 70 },
+      { "title": "HTML/CSS", "percent": 95 },
+      { "title": "SCSS/PCSS", "percent": 80 },
+      { "title": "Bootstrap", "percent": 60 },
+      { "title": "GatsbyJS", "percent": 40 },
+      { "title": "Jest", "percent": 40 }
+    ]
+  },
+  {
+    "category": "BackEnd",
+    "skills": [
+      { "title": "NodeJS", "percent": 30 },
+      { "title": "Express", "percent": 40 },
+      { "title": "MongoDB", "percent": 30 },
+      { "title": "SQL", "percent": 25 },
+      { "title": "PHP", "percent": 20 }
+    ]
+  },
+  {
+    "category": "Tools",
+    "skills": [
+      { "title": "Git", "percent": 80 },
+      { "title": "Webpack", "percent": 75 },
+      { "title": "Gulp/Grunt", "percent": 40 },
+      { "title": "Jira", "percent": 25 },
+      { "title": "NPM/Yarn", "percent": 80 },
+      { "title": "Bash", "percent": 30 }
+    ]
+  }
+]
