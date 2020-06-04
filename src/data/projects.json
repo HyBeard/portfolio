@@ -1,102 +1,61 @@
 {
-  "filterList": [
-    "Show All",
-    "Template",
-    "React",
-    "Redux",
-    "Gatsby",
-    "JavaScript",
-    "NodeJS",
-    "MongoDB"
-  ],
+  "filterList": ["Show All", "Template", "JavaScript", "React", "Redux"],
   "projects": [
     {
       "image": "bike.png",
-      "name": "Your Bike",
+      "name": "YoBike",
       "description": "Bike Store website template",
       "filters": ["Template"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://yo-bike.netlify.app/",
+      "sourceLink": "https://github.com/HyBeard/YoBike"
     },
     {
       "image": "data-grid.png",
-      "name": "Data Grid",
-      "description": "Interactive table with multi-sorting and list virtualization support",
+      "name": "Virtualization Table",
+      "description": "Custom interactive table with multi-sorting, csv exporting and list virtualization support",
       "filters": ["React", "Redux"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://virtualization-redux-table.netlify.app/",
+      "sourceLink": "https://github.com/HyBeard/virtualization-redux-table"
     },
     {
       "image": "neutron-mail.png",
       "name": "Neutron Mail",
-      "description": "Template of Email Security website",
+      "description": "Template of Email Security website. \n One of my first works.",
       "filters": ["Template"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://hybeard.github.io/NeutronMail/",
+      "sourceLink": "https://github.com/HyBeard/NeutronMail"
     },
     {
       "image": "piskel.png",
       "name": "Piskel",
-      "description": "Clone of online editor for animated sprites & pixel art",
+      "description": "Clone of online editor for animated sprites & pixel art. \n (Click 'Create Sprite' button)",
       "filters": ["JavaScript"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://i-piskel-clone.netlify.app/",
+      "sourceLink": "https://github.com/HyBeard/RSScrool/tree/master/simple-piskel-clone"
     },
     {
       "image": "repair.png",
       "name": "Repair Design",
       "description": "Interior Design Agency website template",
       "filters": ["Template"],
-      "deployLink": "#",
-      "sourceLink": "#"
-    },
-    {
-      "image": "cars.png",
-      "name": "Retro Cars",
-      "description": "Collection Of Retro Cars website template",
-      "filters": ["Template"],
-      "deployLink": "#",
-      "sourceLink": "#"
-    },
-    {
-      "image": "kids-english.png",
-      "name": "Rocket English",
-      "description": "English language learning game for kids",
-      "filters": ["React", "MongoDB", "NodeJS"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://repair-design-pr.netlify.app/",
+      "sourceLink": "https://github.com/HyBeard/repair-design-project"
     },
     {
       "image": "song-bird.png",
       "name": "Song Bird",
       "description": "Bird's voice guessing quiz",
       "filters": ["React"],
-      "deployLink": "#",
-      "sourceLink": "#"
-    },
-    {
-      "image": "db.png",
-      "name": "StarWars DB",
-      "description": "Star Wars Characters, Planets, and Vehicles",
-      "filters": ["React", "Redux"],
-      "deployLink": "#",
-      "sourceLink": "#"
-    },
-    {
-      "image": "tattoo.png",
-      "name": "tattoo",
-      "description": "Tattoo Studio website template",
-      "filters": ["Template"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://songbeard-react.netlify.app/",
+      "sourceLink": "https://github.com/HyBeard/songbird"
     },
     {
       "image": "weather.png",
       "name": "Fancy Weather",
       "description": "Weather forecast",
       "filters": ["JavaScript"],
-      "deployLink": "#",
-      "sourceLink": "#"
+      "deployLink": "https://i-fancy-weather.netlify.app/",
+      "sourceLink": "https://github.com/HyBeard/RSScrool/tree/master/fancy-weather"
     }
   ]
 }

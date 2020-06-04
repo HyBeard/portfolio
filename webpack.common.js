@@ -1,6 +1,7 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const miniSvgDataUri = require('mini-svg-data-uri');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const skillsData = require('./src/data/skills.json');
@@ -118,8 +119,16 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: `${PATHS.assets}/docs/`,
+          to: `${PATHS.dist}/docs/`,
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
-      title: 'Kapsevich Ilya | Front End',
+      title: 'Kaptsevich Ilya | Front End',
       template: 'src/views/index.hbs',
       inject: 'body',
       templateParameters: {

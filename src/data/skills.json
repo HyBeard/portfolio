@@ -2,14 +2,14 @@
   {
     "category": "FrontEnd",
     "skills": [
-      { "title": "JavaScript", "percent": 90 },
-      { "title": "React", "percent": 80 },
-      { "title": "Redux", "percent": 70 },
-      { "title": "HTML/CSS", "percent": 95 },
+      { "title": "JavaScript", "percent": 75 },
+      { "title": "React", "percent": 65 },
+      { "title": "Redux", "percent": 55 },
+      { "title": "HTML/CSS", "percent": 90 },
       { "title": "SCSS/PCSS", "percent": 80 },
-      { "title": "Bootstrap", "percent": 60 },
-      { "title": "GatsbyJS", "percent": 40 },
-      { "title": "Jest", "percent": 40 }
+      { "title": "Bootstrap", "percent": 50 },
+      { "title": "GatsbyJS", "percent": 30 },
+      { "title": "Jest", "percent": 30 }
     ]
   },
   {
@@ -17,20 +17,20 @@
     "skills": [
       { "title": "NodeJS", "percent": 30 },
       { "title": "Express", "percent": 40 },
-      { "title": "MongoDB", "percent": 30 },
-      { "title": "SQL", "percent": 25 },
-      { "title": "PHP", "percent": 20 }
+      { "title": "MongoDB", "percent": 25 },
+      { "title": "SQL", "percent": 20 },
+      { "title": "PHP", "percent": 15 }
     ]
   },
   {
     "category": "Tools",
     "skills": [
-      { "title": "Git", "percent": 80 },
-      { "title": "Webpack", "percent": 75 },
-      { "title": "Gulp/Grunt", "percent": 40 },
-      { "title": "Jira", "percent": 25 },
-      { "title": "NPM/Yarn", "percent": 80 },
-      { "title": "Bash", "percent": 30 }
+      { "title": "Git", "percent": 75 },
+      { "title": "Webpack", "percent": 60 },
+      { "title": "Gulp/Grunt", "percent": 35 },
+      { "title": "Jira", "percent": 20 },
+      { "title": "NPM/Yarn", "percent": 70 },
+      { "title": "Bash", "percent": 25 }
     ]
   }
 ]
