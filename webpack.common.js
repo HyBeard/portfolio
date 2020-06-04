@@ -128,7 +128,6 @@ module.exports = {
       ],
     }),
     new HtmlWebpackPlugin({
-      title: 'Kaptsevich Ilya | Front End',
       template: 'src/views/index.hbs',
       inject: 'body',
       templateParameters: {
