@@ -18,14 +18,6 @@
       "sourceLink": "https://github.com/HyBeard/virtualization-redux-table"
     },
     {
-      "image": "neutron-mail.png",
-      "name": "Neutron Mail",
-      "description": "Template of Email Security website. \n One of my first works.",
-      "filters": ["Template"],
-      "deployLink": "https://hybeard.github.io/NeutronMail/",
-      "sourceLink": "https://github.com/HyBeard/NeutronMail"
-    },
-    {
       "image": "piskel.png",
       "name": "Piskel",
       "description": "Clone of online editor for animated sprites & pixel art. \n (Click 'Create Sprite' button)",

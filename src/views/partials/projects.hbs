@@ -25,7 +25,7 @@
               {{/loadImageWithErrorHandling}}
 
               <div class="project__info">
-                <a class="project__deploy-link" href="{{deployLink}}">
+                <a class="project__deploy-link" href="{{deployLink}}" target="_blank" rel="noopener">
                   <h3 class="project__title">{{name}}</h3>
                   <p class="project__description">{{description}}</p>
                 </a>
@@ -39,8 +39,10 @@
 
                 </ul>
                 <div class="project__links-box">
-                  <a href="{{sourceLink}}" class="project__link-icon"><i class="fab fa-github"></i></a>
-                  <a href="{{deployLink}}" class="project__link-icon"><i class="fas fa-globe"></i></a>
+                  <a href="{{sourceLink}}" class="project__link-icon" target="_blank" rel="noopener"><i
+                      class="fab fa-github"></i></a>
+                  <a href="{{deployLink}}" class="project__link-icon" target="_blank" rel="noopener"><i
+                      class="fas fa-globe"></i></a>
                 </div>
               </div>
             </div>
