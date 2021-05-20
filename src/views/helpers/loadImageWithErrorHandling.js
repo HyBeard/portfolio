@@ -1,4 +1,4 @@
-const errorIcon = require('../../assets/icons/error.png');
+const errorIcon = require('../../assets/icons/error.svg').default;
 
 module.exports = (image, options) => {
   try {
@@ -9,7 +9,7 @@ module.exports = (image, options) => {
   } catch (error) {
     return options.fn({
       src: errorIcon,
-      style: 'padding: 3rem',
+      style: '',
     });
   }
 };

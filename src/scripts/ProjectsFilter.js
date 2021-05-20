@@ -8,7 +8,6 @@ export default class ProjectsFilter {
   activeFilterClass = 'filter__button_active';
   projectsSectionClass = 'portfolio__project-list';
   projectContainerClass = 'portfolio__project-container';
-  projectContainerClass = 'portfolio__project-container';
   projectImageClass = 'project__screen';
 
   currentFilter = 'Show All';
@@ -23,12 +22,12 @@ export default class ProjectsFilter {
     });
   }
 
-  changeFilter = (filterElem, filterName) => {
+  changeFilter = (selectedElem, filterName) => {
     this.currentFilterElement.classList.remove(this.activeFilterClass);
-    filterElem.classList.add(this.activeFilterClass);
+    selectedElem.classList.add(this.activeFilterClass);
 
     this.currentFilter = filterName;
-    this.currentFilterElement = filterElem;
+    this.currentFilterElement = selectedElem;
   };
 
   filterVisibleProjects = () => {
@@ -46,7 +45,7 @@ export default class ProjectsFilter {
     const images = [...document.getElementsByClassName(this.projectImageClass)];
 
     this.currentFilterElement.classList.add(this.activeFilterClass);
-    listenImagesLoading(images, this.filterVisibleProjects);
+    listenImagesLoading(images, () => this.iso.arrange());
 
     filterSection.addEventListener('click', ({ target }) => {
       const filterElem = target.closest(`.${this.filterClass}`);
