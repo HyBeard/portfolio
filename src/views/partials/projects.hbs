@@ -4,11 +4,10 @@
     <div class="portfolio-section__container">
 
       <div class="filter portfolio-section__filter">
-        <i class="fas fa-filter filter__icon"></i>
         <ul class="filter__button-list">
           {{#each projectsData.filterList}}
-          <li class="filter__button-box">
-            <span class="filter__button" data-filter="{{this}}">{{this}}</span>
+          <li class="filter__button" data-filter="{{this}}">
+            <span>{{this}}</span>
           </li>
           {{/each}}
         </ul>

@@ -1,13 +1,6 @@
 @use 'variables' as *;
 
 .filter {
-  $self: &;
-
-  &__icon {
-    display: none;
-    font-size: 1.2rem;
-  }
-
   &__button-list {
     display: flex;
     flex-wrap: wrap;
@@ -20,7 +13,6 @@
   &__button {
     box-sizing: border-box;
     display: inline-block;
-    width: 100%;
     padding: 0.5rem 1rem;
     color: $text;
     cursor: pointer;
@@ -46,6 +38,14 @@
     margin-right: -$gap-l;
     padding: 0;
     transition: height 0.5s ease;
+
+    @media screen and (max-width: $breakpoint-m) {
+      margin-right: -$gap-m;
+    }
+
+    @media screen and (max-width: $breakpoint-m) {
+      margin-right: 0;
+    }
   }
 
   &__project-container {
@@ -54,6 +54,21 @@
     margin-right: $gap-l;
     margin-bottom: $gap-l;
     list-style: none;
+
+    @media screen and (max-width: $breakpoint-l) {
+      width: calc(50% - #{$gap-l});
+    }
+
+    @media screen and (max-width: $breakpoint-m) {
+      width: calc(50% - #{$gap-m});
+      margin-right: $gap-m;
+      margin-bottom: $gap-m;
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 }
 
@@ -66,11 +81,15 @@
   background-color: $surface;
   box-shadow: 0 0 3px 0 $paleText;
 
+  @media screen and (max-width: $breakpoint-xs) {
+    padding: 0.5rem;
+  }
+
   &:hover,
   &:focus {
     .project__info {
       top: 50%;
-      z-index: 0;
+      visibility: visible;
       opacity: 1;
     }
 
@@ -103,19 +122,18 @@
   }
 
   &__info {
-    // z-index to fix 'drill-touch'
     position: absolute;
     top: 80%;
     left: 0;
-    z-index: -1;
     box-sizing: border-box;
     width: 100%;
     padding: 0 2rem;
     font-size: 1rem;
     color: $white;
     text-align: center;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease 0s, top 0.5s ease 0s, z-index 0s ease 0.1s;
+    transition: opacity 0.5s ease 0s, top 0.5s ease 0s, visibility 0s ease 0.1s;
     transform: translate(0, -50%);
   }
 
@@ -131,6 +149,10 @@
     font-weight: 500;
     color: $primary;
     text-align: center;
+
+    @media screen and (max-width: $breakpoint-xs) {
+      font-size: 1.2rem;
+    }
   }
 
   &__description {
@@ -186,11 +208,11 @@
 }
 
 .portfolio-section {
-  &__container {
-  }
+  // &__container {
+  // }
 
-  &__filter {
-  }
+  // &__filter {
+  // }
 
   &__projects {
     box-sizing: border-box;

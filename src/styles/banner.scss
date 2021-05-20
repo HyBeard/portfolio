@@ -10,6 +10,7 @@
 
   @media screen and (max-width: $breakpoint-m) {
     height: calc(100vh - #{$quick-contacts-height + $nav-height-m});
+    background-position: 65% center;
   }
 
   &__container {
