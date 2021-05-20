@@ -17,7 +17,7 @@ module.exports = ({ webpack }) => {
       }),
       isProd ? autoprefixer() : false,
       isProd ? postcssSortMediaQueries() : false,
-      postcssPxToRem({ propList: ['*', '!*border*'] }),
+      postcssPxToRem({ propList: ['*', '!*border*'], selectorBlackList: ['hamburger'] }),
     ],
   };
 };
