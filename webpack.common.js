@@ -10,6 +10,7 @@ const PATHS = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist'),
   assets: path.join(__dirname, 'src/assets'),
+  public: path.join(__dirname, 'public'),
 };
 
 module.exports = {
@@ -125,6 +126,7 @@ module.exports = {
         skillsData,
         projectsData,
       },
+      favicon: `${PATHS.public}/favicon.png`,
     }),
   ],
 };
